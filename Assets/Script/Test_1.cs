@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Test_1 : MonoBehaviour
 {
+    //控制int范围
     [Range(1, 100) ]
     public int id;
 
@@ -20,7 +21,10 @@ public class Test_1 : MonoBehaviour
     {
         Debug.Log("Test_1 Start");
         id2 = 123;
-        Test_4 sc = Resources.Load<Test_4>("num_test_4");
+
+        //Resources.Load只能读取Resources文件夹下的资源
+        //Config必须放在Resources文件下
+        ConfigClass sc = Resources.Load<ConfigClass>("Config");
         Debug.Log(sc.ids);
     }
    
