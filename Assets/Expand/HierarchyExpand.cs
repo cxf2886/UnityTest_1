@@ -35,14 +35,14 @@ public class HierarchyExpand
     }
 
     //重写image菜单，将raycastTarget默认关闭
-    [MenuItem("GameObject/UI/Image")]
-    static void CreatImage()
+    [MenuItem("GameObject/UI/myImage")]
+    static void myCreatImage()
     {
         if (Selection.activeTransform)
         {
             if (Selection.activeTransform.GetComponentInParent<Canvas>())
             {
-                Image image = new GameObject("image").AddComponent<Image>();
+                Image image = new GameObject("Image").AddComponent<Image>();
                 image.raycastTarget = false;
                 image.transform.SetParent(Selection.activeTransform, false);
                 //设置选中状态
